@@ -4,6 +4,7 @@ export default [
   "mockserver.config.ts",
   "package.json",
   "README.md",
+  "http/http-client.env.json",
   "src/index.html",
   "src/config/app.config.ts",
   "src/config/di.config.ts",
