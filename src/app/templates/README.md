@@ -3,6 +3,10 @@
 ## Getting Started
 
 This app is based on React.js and uses Vite as build tool.
+It has been scaffolded by Yeoman and [generator-ui5-react](https://www.npmjs.com/package/generator-ui5-react).
+
+If you've freshly generated this app, then follow the instructions to [Setup the OData Service](#setup-odata-service).
+If you've freshly cloned this app, then follow the instructions for the [Initial Setup](#initial-setup).
 
 ### Development
 
@@ -89,6 +93,10 @@ Your personal credentials for authentication go into `.env.local` as well as any
 individual settings like connecting to a different system. This file should not
 be committed (.gitignore is already configured appropriately).
 
+Having done that run `npm run gen-odata`.
+It will download the metadata file to `src/localService/odata-service.xml` and
+generate the OData client.
+
 ## Features & Configuration
 
 ### Launchpad Integration
@@ -106,7 +114,7 @@ The integration goes even further by allowing interaction between
 your React app and the shellbar. See file `src/main.tsx` for how this
 can look like.
 
-### OData Service Integration
+### Proxy Server
 
 When developing we use a proxy to simulate that requests for our frontend stuff
 (served by a local node.js server) and web service / OData calls (served by a SAP system)
@@ -116,7 +124,7 @@ This prevents [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) pro
 As has been mentioned in the setup section, the connection details to your OData service are maintained
 in `.env` and `.env.local`.
 
-#### HTTP Tests
+### HTTP Tests
 
 You should then test that you can reach this OData service and test the calls
 you're going to execute. For this purpose you can make use of http-scripts, which
@@ -124,31 +132,29 @@ you find under folder `http`.
 
 You need the `REST client` plugin for VSCode or the `HTTP Client` for IntelliJ.
 
-#### OData Client
+### Generated OData Client
 
-This app generates an OData client out of provided metadata and some configuration
-by facilitating [odata2ts](https://odata2ts.github.io/).
+This app generates an OData client with the help of [odata2ts](https://odata2ts.github.io/).
 
-Configure the generation in `odata2ts.config.ts`.
+Generate the type-safe and domain-savvy OData client by `npm run gen-odata`.
+Files will be generated under `src-generated/odata-service`.
 
-As an example, the [Trippin OData V4 example service](https://www.odata.org/odata-services/)
-is integrated by default. To provide your own service download the metadata (BASE_URL/$metadata)
-and overwrite `src/localService/odata-service.xml`.
-
-Then generate a type-safe OData client by `npm run gen-odata`. Files will be generated under
-`src-generated/odata-service`.
-
+Configure the OData client generation in `odata2ts.config.ts`.
 Initialization of the generated OData client is configured in `src/config/odata.config.ts`.
 
-#### Mock Service
+### Mock Service
 
 This app bundles SAP's [mock server](https://github.com/SAP/open-ux-odata/tree/main/packages/fe-mockserver-core)
 which is used to mock your OData service.
 
 The mock server requires the metadata file `src/localService/odata-service.xml` and some
-mock data: see JSON files in `src/localService/main-service` for a start.
+mock data:
 
-Configure the mock server via `mockserver.config.ts`.
+1. With the help of the http scripts, call the `EntitySets` of your OData service
+2. Store the JSON response (without any wrapping of `d` or `results`) as json files under `src/localService/main-service`
+3. Start the mock server via `npm run start-mock`
+
+The mock server is configured via `mockserver.config.ts`.
 
 ## Overview Configuration Files
 

@@ -106,6 +106,7 @@ export class Ui5ReactGenerator extends Generator {
       ? this.answers.odataServicePath.substring(1)
       : this.answers.odataServicePath;
 
+    this.answers.odataServicePath = "/" + odataPath;
     this.answers.fullServiceUrl = `${this.answers.serverUrl}/${odataPath}`;
   }
 
@@ -125,8 +126,6 @@ export class Ui5ReactGenerator extends Generator {
   }
 
   public end() {
-    this.spawnCommandSync("npm", ["run", "gen-odata"]);
-
     this.log("");
     this.log("");
     this.log("Thanks for using the ui5-react generator!");
