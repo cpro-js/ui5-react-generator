@@ -1,0 +1,24 @@
+{
+  "general": {
+    "showDetails": "Show Details",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "next": "Next",
+    "yes": "Yes",
+    "no": "No",
+    "emptyText": "---",
+    "reloadData": "Reload",
+    "noConnection": {
+      "caption": "No Internet Connection",
+      "title": "The server cannot be reached at the moment",
+      "text": "You can proceed as soon as connectivity is established again."
+    }
+  },
+  "test": {
+    "interpolation": "Static, translated text with interpolations for a string {{testName}} and a number {{testSize}}",
+    "pluralization_zero": "Zero Test Messages!",
+    "pluralization_one": "One Test Message",
+    "pluralization_other": "{{count}} Test Messages",
+    "cascadingLocalization": "Hello"
+  }
+}

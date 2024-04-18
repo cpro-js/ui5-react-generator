@@ -1,0 +1,47 @@
+# Generated ODataClient
+src-generated
+
+# Environment Files
+.env.local
+.env.*.local
+http/http-client.env.json
+
+# Build Folders
+dist
+coverage
+
+# OSX
+.DS_Store
+
+# IntelliJ
+.idea
+*.iml
+*.private.env.json
+*.log.http
+
+# Emacs
+*~
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# node.js
+.npmrc
+node_modules/
+npm-debug.log
+yarn-error.log
+lerna-debug.log
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+# !.yarn/cache
+
+# TypeScript incremental compilation cache
+*.tsbuildinfo

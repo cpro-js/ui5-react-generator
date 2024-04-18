@@ -1,0 +1,64 @@
+{
+  "sap.app": {
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "<%= appTitle %>",
+    "id": "<%= appId %>",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "offline": false,
+    "crossNavigation": {
+      "inbounds": {
+        "<%= appId %>-inbound": {
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          },
+          "semanticObject": "<%= semanticObject %>",
+          "action": "<%= action %>",
+          "title": "<%= appTitle %>",
+          "subTitle": "",
+          "icon": "sap-icon://accept"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "fullWidth": false,
+    "technology": "UI5"
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.108.30",
+      "libs": {
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": false,
+      "cozy": true
+    },
+    "resources": {
+      "models": {
+        "i18n": {
+          "type": "sap.ui.model.Model"
+        }
+      },
+      "js": [],
+      "css": []
+    },
+    "services": {
+      "ShellUIService": {
+        "factoryName": "sap.ushell.ui5service.ShellUIService"
+      }
+    }
+  },
+  "_version": "1.28.0"
+}

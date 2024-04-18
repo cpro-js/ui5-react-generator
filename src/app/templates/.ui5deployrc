@@ -1,0 +1,11 @@
+{
+  "cwd": "./dist",
+  "server": "<%= serverUrl %>",
+  "client": "<%= sapClientForDeployment %>",
+  "language": "<%= defaultLanguage %>",
+  "useStrictSSL": false,
+  "package": "<%= package %>",
+  "transportNo": "<%= transportNo %>",
+  "bspContainer": "<%= bspContainer %>",
+  "bspContainerText": "<%= appTitle %>"
+}

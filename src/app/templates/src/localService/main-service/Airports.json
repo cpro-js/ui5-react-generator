@@ -1,0 +1,117 @@
+[
+  {
+    "Name": "San Francisco International Airport",
+    "IcaoCode": "KSFO",
+    "IataCode": "SFO",
+    "Location": {
+      "Address": "South McDonnell Road, San Francisco, CA 94128",
+      "Loc": {
+        "type": "Point",
+        "coordinates": [-122.374722222222, 37.6188888888889],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:4326"
+          }
+        }
+      },
+      "City": {
+        "Name": "San Francisco",
+        "CountryRegion": "United States",
+        "Region": "California"
+      }
+    }
+  },
+  {
+    "Name": "Los Angeles International Airport",
+    "IcaoCode": "KLAX",
+    "IataCode": "LAX",
+    "Location": {
+      "Address": "1 World Way, Los Angeles, CA, 90045",
+      "Loc": {
+        "type": "Point",
+        "coordinates": [-118.408055555556, 33.9425],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:4326"
+          }
+        }
+      },
+      "City": {
+        "Name": "Los Angeles",
+        "CountryRegion": "United States",
+        "Region": "California"
+      }
+    }
+  },
+  {
+    "Name": "Shanghai Hongqiao International Airport",
+    "IcaoCode": "ZSSS",
+    "IataCode": "SHA",
+    "Location": {
+      "Address": "Hongqiao Road 2550, Changning District",
+      "Loc": {
+        "type": "Point",
+        "coordinates": [121.336111111111, 31.1977777777778],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:4326"
+          }
+        }
+      },
+      "City": {
+        "Name": "Shanghai",
+        "CountryRegion": "China",
+        "Region": "Shanghai"
+      }
+    }
+  },
+  {
+    "Name": "Beijing Capital International Airport",
+    "IcaoCode": "ZBAA",
+    "IataCode": "PEK",
+    "Location": {
+      "Address": "Airport Road, Chaoyang District, Beijing, 100621",
+      "Loc": {
+        "type": "Point",
+        "coordinates": [116.584444444444, 40.08],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:4326"
+          }
+        }
+      },
+      "City": {
+        "Name": "Beijing",
+        "CountryRegion": "China",
+        "Region": "Beijing"
+      }
+    }
+  },
+  {
+    "Name": "John F. Kennedy International Airport",
+    "IcaoCode": "KJFK",
+    "IataCode": "JFK",
+    "Location": {
+      "Address": "Jamaica, New York, NY 11430",
+      "Loc": {
+        "type": "Point",
+        "coordinates": [-73.7788888888889, 40.6397222222222],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:4326"
+          }
+        }
+      },
+      "City": {
+        "Name": "New York City",
+        "CountryRegion": "United States",
+        "Region": "New York"
+      }
+    }
+  }
+]

@@ -9,6 +9,7 @@ gen/
 target/
 _out
 coverage
+generators
 
 # Typescript
 tsconfig.build.tsbuildinfo

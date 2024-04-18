@@ -1,33 +1,27 @@
 {
   "name": "generator-ui5-react",
-  "description": "Scaffold a complete React app based on Vite using UI5 Webcomponents offering a seamless Fiori Launchpad integration",
   "version": "0.7.1",
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=12"
-  },
-  "scripts": {
-    "build": "webpack",
-    "prepublish": "webpack"
-  },
-  "files": [
-    "generators"
-  ],
+  "description": "Scaffold a complete React app based on Vite using UI5 Webcomponents offering a seamless Fiori Launchpad integration",
   "keywords": [
     "yeoman-generator",
     "React",
     "UI5",
     "Vite"
   ],
+  "license": "MIT",
+  "files": [
+    "generators"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "prepublish": "webpack"
+  },
   "dependencies": {
     "yeoman-generator": "^7.1.1",
     "yosay": "^3.0.0"
   },
   "devDependencies": {
-    "@prettier/plugin-xml": "^3.2.2",
+    "@prettier/plugin-xml": "^3.4.1",
     "@types/yeoman-generator": "^5.2.14",
     "@types/yosay": "^2.0.3",
     "clean-webpack-plugin": "^4.0.0",
@@ -41,5 +35,10 @@
     "webpack-cli": "^5.1.4",
     "webpack-node-externals": "^3.0.0"
   },
-  "packageManager": "yarn@4.0.2"
+  "engines": {
+    "node": ">=12"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

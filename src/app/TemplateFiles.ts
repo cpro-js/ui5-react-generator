@@ -1,0 +1,15 @@
+export default [
+  ".env",
+  ".ui5deployrc",
+  "package.json",
+  "README.md",
+  "src/index.html",
+  "src/config/app.config.ts",
+  "src/config/di.config.ts",
+  "src/config/i18n.config.ts",
+  "src/config/odata.config.ts",
+  "ui5/Component.ts",
+  "ui5/flpSandbox.html",
+  "ui5/manifest.json",
+  "ui5/standalone.html",
+];
