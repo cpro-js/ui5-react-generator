@@ -1,6 +1,6 @@
 import { I18nModuleRegistryOptions } from "@cpro-js/react-core";
 
-const FALLBACK_LOCALE = "<%= defaultLocale %>";
+const FALLBACK_LOCALE = "<%= defaultLanguage %>";
 
 export const createI18nConfig = (locale?: string): I18nModuleRegistryOptions => ({
   debug: false,

@@ -4,7 +4,6 @@ export default [
   ".prettierignore",
   ".prettierrc",
   ".prettierrc.extension",
-  "mockserver.config.ts",
   "odata2ts.config.ts",
   "tsconfig.json",
   "tsconfig.node.json",

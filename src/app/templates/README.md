@@ -56,7 +56,7 @@ Changing any file won't reload the changes.
 The app is deployed with the help of [ui5-nwabap-deployer-cli](https://www.npmjs.com/package/ui5-nwabap-deployer-cli).
 The central configuration file is `.ui5deployrc` in the root folder.
 
-`npm run deploy --user YOUR_USER --pwd YOUR_PASSWORD`
+`npm run deploy -- --user YOUR_USER --pwd YOUR_PASSWORD`
 
 This command will automatically build the app beforehand and then deploy it to the target SAP system.
 

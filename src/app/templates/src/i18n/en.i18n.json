@@ -7,7 +7,6 @@
     "yes": "Yes",
     "no": "No",
     "emptyText": "---",
-    "reloadData": "Reload",
     "noConnection": {
       "caption": "No Internet Connection",
       "title": "The server cannot be reached at the moment",

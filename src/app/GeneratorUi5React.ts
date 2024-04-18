@@ -13,9 +13,9 @@ interface Answers {
   odataServicePath: string;
   semanticObject: string;
   action: string;
+  bspContainer: string;
   package: string;
   transportNo: string;
-  bspContainer: string;
   sapClientForDev: number;
   sapClientForDeployment: number;
   fullServiceUrl: string;
@@ -65,13 +65,18 @@ export class Ui5ReactGenerator extends Generator {
       {
         type: "input",
         name: "semanticObject",
-        message: "The semantic object used for Fiori Launchpad config:",
+        message: "The semantic object used for Fiori Launchpad config (underscores allowed, no hyphens, no dots):",
       },
       {
         type: "input",
         name: "action",
         default: "display",
         message: "The action used for Fiori Launchpad config:",
+      },
+      {
+        type: "input",
+        name: "bspContainer",
+        message: "Name of the BSP container, e.g. 'ZEWM_MY_APP' (max 15 chars):",
       },
       {
         type: "input",
@@ -82,11 +87,6 @@ export class Ui5ReactGenerator extends Generator {
         type: "input",
         name: "transportNo",
         message: "The transport number used for deployment:",
-      },
-      {
-        type: "input",
-        name: "bspContainer",
-        message: "Name of the BSP container, e.g. 'ZEWM_MY_APP' (max 15 chars):",
       },
       {
         type: "input",

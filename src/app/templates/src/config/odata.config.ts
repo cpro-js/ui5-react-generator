@@ -5,7 +5,7 @@ import { MainODataService } from "../../src-generated/odata-service/MainODataSer
 /**
  * CONFIG: Path to the main OData service
  */
-export const MAIN_SERVICE_PATH = "<%= odataServicePath %>";
+const MAIN_SERVICE_PATH = "<%= odataServicePath %>";
 
 /**
  * Helper function to bundle logic around creating the OData client

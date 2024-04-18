@@ -1,6 +1,7 @@
 export default [
   ".env",
   ".ui5deployrc",
+  "mockserver.config.ts",
   "package.json",
   "README.md",
   "src/index.html",

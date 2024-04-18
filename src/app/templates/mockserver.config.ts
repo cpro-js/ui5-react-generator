@@ -1,7 +1,8 @@
 import { resolve } from "path";
 import { MockserverConfiguration } from "@sap-ux/fe-mockserver-core";
 import FileSystemLoader from "@sap-ux/fe-mockserver-core/dist/plugins/fileSystemLoader";
-import { MAIN_SERVICE_PATH } from "./src/config/odata.config";
+
+const MAIN_SERVICE_PATH = "<%= odataServicePath %>";
 
 // @ts-ignore
 class CustomFileLoader extends FileSystemLoader.default {
