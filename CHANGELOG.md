@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0 (2024-04-18)
+
+
+### Features
+
+* fine-tuning ([09e6390](https://github.com/cpro-js/generator-ui5-react/commit/09e639083f205c777cb2ed61bcd25bd45d7c919b))
+* new version of the generator featuring Vite and some restructuring ([7388e04](https://github.com/cpro-js/generator-ui5-react/commit/7388e04b5b461486c91c40fc68c40926f009984c))
+
+
+### Build System
+
+* release please config ([d42ea5d](https://github.com/cpro-js/generator-ui5-react/commit/d42ea5dbcf3e0034bc56fe8b6acbf3d8c75b46b7))
+
 ## [0.7.1](https://github.com/cpro-js/react-build-tools/compare/generator-ui5-react@0.7.0...generator-ui5-react@0.7.1) (2023-06-14)
 
 ### Bug Fixes
