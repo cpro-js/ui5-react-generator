@@ -1,28 +1,38 @@
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const nodeExternals = require("webpack-node-externals");
+import * as url from "url";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import nodeExternals from "webpack-node-externals";
+
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 const config = [
   {
     entry: {
       app: [__dirname + "/src/app/index.ts"],
     },
+    experiments: {
+      outputModule: true,
+    },
     output: {
       path: __dirname + "/generators/",
       filename: "[name]/index.js",
-      libraryTarget: "commonjs-module",
+      library: {
+        type: "module",
+      },
     },
     // externalsPresets: { node: true }, // in order to ignore built-in modules like path, fs, etc.
-    externals: [
-      nodeExternals({ additionalModuleDirs: ["../../node_modules"] }),
-    ], // in order to ignore all modules in node_modules folder
+    externals: [nodeExternals({ importType: "module", additionalModuleDirs: ["../../node_modules"] })], // in order to ignore all modules in node_modules folder
     devtool: "source-map",
     mode: "production",
     resolve: {
       extensions: [".ts", ".tsx", ".js"],
+      extensionAlias: {
+        ".js": [".js", ".ts"],
+        ".cjs": [".cjs", ".cts"],
+        ".mjs": [".mjs", ".mts"],
+      },
       alias: {},
     },
-    target: "node",
     node: {
       __dirname: false,
       __filename: false,
@@ -55,4 +65,4 @@ const config = [
   },
 ];
 
-module.exports = config;
+export default config;
