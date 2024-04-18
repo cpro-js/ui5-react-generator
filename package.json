@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "webpack",
-    "prepublish": "webpack"
+    "prepack": "webpack"
   },
   "dependencies": {
     "yeoman-generator": "^7.1.1",
@@ -27,7 +27,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "devDependecies": {
+  "devDependencies": {
     "@prettier/plugin-xml": "^3.4.1",
     "@types/yeoman-generator": "^5.2.14",
     "@types/yosay": "^2.0.3",
