@@ -14,10 +14,16 @@ const config: ConfigFileOptions = {
       sourceUrlConfig: {
         username: envVars.PROXY_SAP_USERNAME,
         password: envVars.PROXY_SAP_PASSWORD,
+        custom: {
+          params: {
+            "sap-client": envVars.PROXY_SAP_CLIENT,
+          },
+        },
       },
       source: "src/localService/odata-service.xml",
       output: "src-generated/odata-service",
-      refreshFile: true,
+      // if OData service is in development, set this to true
+      // refreshFile: true
     },
   },
 };

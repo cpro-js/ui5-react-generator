@@ -1,6 +1,5 @@
 export default [
   ".editorconfig",
-  ".env.local",
   ".prettierignore",
   ".prettierrc",
   ".prettierrc.extension",
@@ -8,6 +7,7 @@ export default [
   "tsconfig.json",
   "tsconfig.node.json",
   "vite.config.ts",
+  ".vscode/settings.json",
   "http/main-odata.http",
   "public/robots.txt",
   "src/index.tsx",
