@@ -1,14 +1,13 @@
-# --- Configuration for VSCode ---
-@rootUrl = https://services.odata.org/TripPinRESTierService
+@language=<%= defaultLanguage %>
 
 ###
 # @name metadata
-GET {{rootUrl}}/$metadata
-#Authorization: {{auth}}
+GET {{mainService}}/$metadata
+Authorization: {{auth}}
 
 ###
-# @name list people
-GET {{rootUrl}}/People
+# @name list TODO
+GET {{mainService}}/TODO
 Accept: application/json
 Accept-Language: {{language}}
-#Authorization: {{auth}}
+Authorization: {{auth}}

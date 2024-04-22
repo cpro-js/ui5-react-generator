@@ -11,6 +11,8 @@ interface Answers {
   defaultLanguage: string;
   serverUrl: string;
   odataServicePath: string;
+  userName: string;
+  password: string;
   semanticObject: string;
   action: string;
   bspContainer: string;
@@ -19,6 +21,7 @@ interface Answers {
   sapClientForDev: number;
   sapClientForDeployment: number;
   fullServiceUrl: string;
+  basicAuth: string;
 }
 
 export class Ui5ReactGenerator extends Generator {
@@ -59,8 +62,18 @@ export class Ui5ReactGenerator extends Generator {
       {
         type: "input",
         name: "odataServicePath",
-        default: "TripPinRESTierService",
+        default: "/TripPinRESTierService",
         message: "Absolute path to the OData service (without protocol and host):",
+      },
+      {
+        type: "input",
+        name: "userName",
+        message: "User name to use for communication with OData Service (SAP User):",
+      },
+      {
+        type: "password",
+        name: "password",
+        message: "Password to use for communication with OData Service (SAP User):",
       },
       {
         type: "input",
@@ -76,7 +89,7 @@ export class Ui5ReactGenerator extends Generator {
       {
         type: "input",
         name: "bspContainer",
-        message: "Name of the BSP container, e.g. 'ZEWM_MY_APP' (max 15 chars):",
+        message: "Name of the BSP container (underscores allowed, max 15 chars):",
       },
       {
         type: "input",
@@ -97,17 +110,19 @@ export class Ui5ReactGenerator extends Generator {
       {
         type: "input",
         name: "sapClientForDev",
-        default: "200",
-        message: "Sap client to use for development (OData consumption):",
+        default: "100",
+        message: "Sap client to use when accessing & manipulating data (OData consumption):",
       },
     ]);
 
-    const odataPath = this.answers.odataServicePath.startsWith("/")
-      ? this.answers.odataServicePath.substring(1)
-      : this.answers.odataServicePath;
+    const odataPath = (!this.answers.odataServicePath.startsWith("/") ? "/" : "") + this.answers.odataServicePath;
 
-    this.answers.odataServicePath = "/" + odataPath;
-    this.answers.fullServiceUrl = `${this.answers.serverUrl}/${odataPath}`;
+    this.answers.odataServicePath = odataPath;
+    this.answers.fullServiceUrl = this.answers.serverUrl + odataPath;
+
+    const authString = `${this.answers.userName}:${this.answers.password}`;
+    const encoded = Buffer.from(authString, "binary").toString("base64");
+    this.answers.basicAuth = `Basic ${encoded}`;
   }
 
   public writing() {
@@ -126,6 +141,8 @@ export class Ui5ReactGenerator extends Generator {
   }
 
   public end() {
+    this.spawnCommandSync("npm", ["run", "gen-odata"]);
+
     this.log("");
     this.log("");
     this.log("Thanks for using the ui5-react generator!");

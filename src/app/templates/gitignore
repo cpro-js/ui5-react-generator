@@ -4,7 +4,7 @@ src-generated
 # Environment Files
 .env.local
 .env.*.local
-http/http-client.env.json
+http/http-client.private.env.json
 
 # Build Folders
 dist
