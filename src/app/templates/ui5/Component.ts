@@ -4,7 +4,7 @@ import Core from "sap/ui/core/Core";
 import EventBus from "sap/ui/core/EventBus";
 import RenderManager from "sap/ui/core/RenderManager";
 import HashChanger from "sap/ui/core/routing/HashChanger";
-import UIComponent from "sap/ui/core/UIComponent";
+import UIComponent, { $UIComponentSettings } from "sap/ui/core/UIComponent";
 import Device from "sap/ui/Device";
 import { render, RenderOptions } from "virtual:@cpro-js/vite-ui5-integration-plugin/runtime";
 
@@ -25,15 +25,18 @@ export default class Component extends UIComponent {
   /**
    * The component is initialized by UI5 automatically during the startup of the app and calls the init method once.
    */
-  constructor() {
-    super();
-    this.eventBus = new EventBus();
-    Core.attachThemeChanged(this._onThemeChanged, this);
-    Core.attachLocalizationChanged(this._onLocalizationChanged, this);
+  constructor(id?: string | $UIComponentSettings);
+  constructor(id?: string, settings?: $UIComponentSettings);
+  constructor(id?: string, settings?: $UIComponentSettings) {
+    super(id, settings);
 
+    this.eventBus = new EventBus();
     // load custom App code
     this.scriptPromise = this._loadScriptModule(this.resolveUri("/main.tsx"));
     this.appElementId = this.createId("custom-app");
+
+    Core.attachThemeChanged(this._onThemeChanged, this);
+    Core.attachLocalizationChanged(this._onLocalizationChanged, this);
 
     // set content density class for standalone apps only, launchpad set this already based on the manifest
     if (!this.isLaunchpad()) {
@@ -110,6 +113,14 @@ export default class Component extends UIComponent {
 
   public getNavigationContext(): { semanticObject?: string; action?: string } {
     return this._parseShellHash(new HashChanger().getHash());
+  }
+
+  /**
+   * Gets the parameters that were passed during initialization as startup parameters
+   */
+  public getStartupParameters(): Record<string, Array<string>> {
+    const componentData: { startupParameters?: Record<string, Array<string>> } = this.getComponentData?.() ?? {};
+    return componentData.startupParameters ?? {};
   }
 
   public async setRelatedApps(
