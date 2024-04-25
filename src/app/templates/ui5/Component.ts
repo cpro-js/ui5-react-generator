@@ -1,6 +1,5 @@
 import type MessageBox from "sap/m/MessageBox";
 import type UI5Event from "sap/ui/base/Event";
-import Configuration from "sap/ui/core/Configuration";
 import Core from "sap/ui/core/Core";
 import EventBus from "sap/ui/core/EventBus";
 import RenderManager from "sap/ui/core/RenderManager";
@@ -16,6 +15,7 @@ export default class Component extends UIComponent {
   private readonly eventBus: EventBus;
   private readonly scriptPromise: Promise<void>;
   private readonly appElementId: string;
+  private destroyed: boolean = false;
   private unmountApp?: () => void;
 
   public static metadata = {
@@ -45,6 +45,10 @@ export default class Component extends UIComponent {
     }
   }
 
+  isDestroyed(): boolean {
+    return this.destroyed;
+  }
+
   render(oRenderManager: RenderManager) {
     oRenderManager.openStart("div");
     oRenderManager.attr("id", this.appElementId);
@@ -65,7 +69,7 @@ export default class Component extends UIComponent {
 
       const el = document.getElementById(this.appElementId) as HTMLElement;
       // // set text direction for web components
-      const rtl = Configuration.getRTL();
+      const rtl = Core.getConfiguration().getRTL();
       el.dir = rtl ? "rtl" : "ltr";
 
       this.unmountApp = await render(el, this.getRenderOptions());
@@ -90,6 +94,8 @@ export default class Component extends UIComponent {
     Core.detachLocalizationChanged(this._onLocalizationChanged, this);
 
     super.destroy();
+
+    this.destroyed = true;
   }
 
   public getRenderOptions(): RenderOptions {
@@ -112,7 +118,7 @@ export default class Component extends UIComponent {
       subtitle?: string;
       icon?: string;
       intent: string;
-    }>,
+    }>
   ): Promise<void> {
     const service: sap.ushell.ui5service.ShellUIService = await this.getService("ShellUIService");
     service.setRelatedApps(relatedApps);
@@ -152,7 +158,7 @@ export default class Component extends UIComponent {
    * BCP-47 language list, e.g. de-DE, en-US, en
    */
   public getLocale(): string {
-    const locale = Configuration.getLanguage();
+    const locale = Core.getConfiguration().getLanguage();
     return locale
       .split(/[_\-]/gi)
       .map((s, index) => (index === 0 ? s.toLowerCase() : s.toUpperCase()))
@@ -163,7 +169,7 @@ export default class Component extends UIComponent {
    * Get the current theme, e.g. sap_fiori_3
    */
   public getTheme(): string {
-    return Configuration.getTheme();
+    return Core.getConfiguration().getTheme();
   }
 
   subscribeToThemeChanges(cb: (theme: string) => void) {
@@ -177,7 +183,7 @@ export default class Component extends UIComponent {
    */
   public getAnimationMode(): "basic" | "full" | "minimal" | "none" {
     // @ts-ignore: incorrect typing & missing export of type ...
-    return Configuration.getAnimationMode();
+    return Core.getConfiguration().getAnimationMode();
   }
 
   /**
