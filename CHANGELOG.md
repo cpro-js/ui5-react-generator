@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.1.0...generator-ui5-react-v1.2.0) (2024-04-25)
+
+
+### Features
+
+* support at least UI5 version 1.84.x ([c0da292](https://github.com/cpro-js/generator-ui5-react/commit/c0da292ff9399a7d37f72ba9fcdfeb6f7bad636a))
+
+
+### Bug Fixes
+
+* handling of startup parameters ([77736b0](https://github.com/cpro-js/generator-ui5-react/commit/77736b00bc7504814e6fb7ffd46d945df303b183))
+
 ## [1.1.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.0.0...generator-ui5-react-v1.1.0) (2024-04-22)
 
 
