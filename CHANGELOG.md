@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.0.0...generator-ui5-react-v1.1.0) (2024-04-22)
+
+
+### Features
+
+* add settings.json for VSCode with formatter info ([65df756](https://github.com/cpro-js/generator-ui5-react/commit/65df756e903b19aebfe74d7588775a50ec1d0a67))
+* ask for userName & password & run generate ([d440326](https://github.com/cpro-js/generator-ui5-react/commit/d440326d142dba1e7595435aa63c84b181cee53e))
+* dispense with TrippinService as example & download metadata via odata2ts ([#2](https://github.com/cpro-js/generator-ui5-react/issues/2)) ([e798552](https://github.com/cpro-js/generator-ui5-react/commit/e798552d48dc22ef52b5fc93d40f093d8eae5dd9))
+
+
+### Bug Fixes
+
+* add src-generated to TS include path ([fb67f8a](https://github.com/cpro-js/generator-ui5-react/commit/fb67f8a172443e43e404463e075470c6d4d26ad0))
+* old react-ui5-notification ([fbd77dd](https://github.com/cpro-js/generator-ui5-react/commit/fbd77dd9e3fb5b5e46b7f7fa8a3e63d881c367b4))
+
 ## 1.0.0 (2024-04-18)
 
 
