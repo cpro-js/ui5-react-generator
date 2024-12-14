@@ -9,6 +9,7 @@
   "semi": true,
   "singleQuote": false,
   "singleAttributePerLine": false,
+  "importOrderParsers": ["typescript", "jsx", "decorators"],
   "overrides": [
     {
       "files": [
