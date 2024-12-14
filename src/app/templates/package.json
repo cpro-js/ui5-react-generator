@@ -29,10 +29,10 @@
   "dependencies": {
     "@cpro-js/history-ui5": "^4.0.0",
     "@cpro-js/react-core": "^0.3.0",
-    "@cpro-js/react-ui5-notification": "^1.0.2",
-    "@cpro-js/react-ui5-webcomponents-form": "^1.0.1",
-    "@odata2ts/http-client-fetch": "^0.6.2",
-    "@odata2ts/odata-service": "^0.18.0",
+    "@cpro-js/react-ui5-notification": "^1.0.3",
+    "@cpro-js/react-ui5-webcomponents-form": "^1.0.2",
+    "@odata2ts/http-client-fetch": "^0.8.0",
+    "@odata2ts/odata-service": "^0.22.0",
     "@ui5/webcomponents": "~1.23.3",
     "@ui5/webcomponents-fiori": "~1.23.3",
     "@ui5/webcomponents-react": "~1.26.1",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@cpro-js/vite-ui5-common-config": "^0.1.3",
-    "@odata2ts/odata2ts": "^0.33.2",
+    "@odata2ts/odata2ts": "^0.39.0",
     "@prettier/plugin-xml": "^3.4.1",
     "@sap-ux/fe-mockserver-core": "^1.2.37",
     "@sapui5/types": "^1.122.2",
