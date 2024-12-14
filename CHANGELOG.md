@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.2.0...generator-ui5-react-v1.3.0) (2024-12-14)
+
+
+### Features
+
+* add support for httpyac as means of using http scripts in VSCode ([6df83bf](https://github.com/cpro-js/generator-ui5-react/commit/6df83bf64b5d55df79046316bbc8e28f9c4eff15))
+
+
+### Bug Fixes
+
+* make prettier work with decorators by specifying importOrderParsers ([2f4d028](https://github.com/cpro-js/generator-ui5-react/commit/2f4d0284b0c0c926c4a6f5e640c10fb33f5f02e7))
+
 ## [1.2.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.1.0...generator-ui5-react-v1.2.0) (2024-04-25)
 
 
