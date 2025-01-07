@@ -8,8 +8,9 @@ import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme";
 // @ts-ignore: no typings available
 import { createRoot } from "react-dom/client";
 import { register } from "virtual:@cpro-js/vite-ui5-integration-plugin/runtime";
-import { APPS, getIntent } from "./config/app.config";
+import { APPS } from "../app.config";
 import { App } from "./domain/App";
+import { getIntent } from "./domain/AppUtil";
 
 register((rootNode, { component } = {}) => {
   if (component) {
