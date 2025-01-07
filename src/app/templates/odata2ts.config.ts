@@ -20,8 +20,8 @@ const config: ConfigFileOptions = {
           },
         },
       },
-      source: "src/localService/odata-service.xml",
-      output: "src-generated/odata-service",
+      source: "src/localService/main-service.xml",
+      output: "src-generated/main-service",
       // if OData service is in development, set this to true
       // refreshFile: true
     },
