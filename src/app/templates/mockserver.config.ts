@@ -21,7 +21,7 @@ export const mockServerConfig: MockserverConfiguration = {
   services: [
     {
       urlPath: MAIN_SERVICE_PATH,
-      metadataPath: resolve(__dirname, "src/localService/odata-service.xml"),
+      metadataPath: resolve(__dirname, "src/localService/main-service.xml"),
       mockdataPath: resolve(__dirname, "src/localService/main-service"),
       watch: true,
     },
