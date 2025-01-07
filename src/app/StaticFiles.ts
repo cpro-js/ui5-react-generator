@@ -4,6 +4,7 @@ export default [
   ".prettierrc",
   ".prettierrc.extension",
   "odata2ts.config.ts",
+  "httpyac.config.cjs",
   "tsconfig.json",
   "tsconfig.node.json",
   "vite.config.ts",
