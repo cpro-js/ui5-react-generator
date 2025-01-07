@@ -1,19 +1,7 @@
 import { resolve } from "path";
 import { MockserverConfiguration } from "@sap-ux/fe-mockserver-core";
 import FileSystemLoader from "@sap-ux/fe-mockserver-core/dist/plugins/fileSystemLoader";
-
-const MAIN_SERVICE_PATH = "<%= odataServicePath %>";
-
-// @ts-ignore
-class CustomFileLoader extends FileSystemLoader.default {
-  exists(filePath: string): Promise<boolean> {
-    return super.exists(filePath.replace(/\.js$/i, ".cjs"));
-  }
-
-  loadJS(filePath: string) {
-    return super.loadJS(filePath.replace(/\.js$/i, ".cjs"));
-  }
-}
+import { MAIN_SERVICE_PATH } from "./app.config";
 
 export const mockServerConfig: MockserverConfiguration = {
   // @ts-ignore
@@ -27,3 +15,14 @@ export const mockServerConfig: MockserverConfiguration = {
     },
   ],
 };
+
+// @ts-ignore
+class CustomFileLoader extends FileSystemLoader.default {
+  exists(filePath: string): Promise<boolean> {
+    return super.exists(filePath.replace(/\.js$/i, ".cjs"));
+  }
+
+  loadJS(filePath: string) {
+    return super.loadJS(filePath.replace(/\.js$/i, ".cjs"));
+  }
+}

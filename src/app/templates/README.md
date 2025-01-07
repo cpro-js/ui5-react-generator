@@ -69,6 +69,9 @@ for a second time.
 
 ## Setup
 
+When developing with VSCode install the following REST client: `httpyac` ([docs](https://httpyac.github.io/guide/)).
+This one works a tad better than the regular REST client in regard to environment variables. 
+
 ### Initial Setup
 
 These instructions are only needed after initial cloning of the repository:
@@ -83,6 +86,22 @@ Create the file `.env.local` and copy the following contents into it:
 PROXY_SAP_USERNAME=
 PROXY_SAP_PASSWORD=
 ```
+
+Then set your username and password for the system.
+
+Create the file `http/http-client.private.env.json` and copy the following contents into it:
+
+```
+{
+  "dev": {
+    "auth": "TODO"
+  }
+}
+```
+
+Replace the "TODO" with your basic auth credentials. You can use this generator, which works offline, to generate
+the basic auth credentials: [Blitter.se](https://www.blitter.se/utils/basic-authentication-header-generator/).
+
 
 ### Setup OData Service
 
@@ -130,7 +149,7 @@ You should then test that you can reach this OData service and test the calls
 you're going to execute. For this purpose you can make use of http-scripts, which
 you find under folder `http`.
 
-You need the `REST client` plugin for VSCode or the `HTTP Client` for IntelliJ.
+You need the `httpyac` plugin for VSCode or the `HTTP Client` for IntelliJ.
 
 ### Generated OData Client
 
@@ -163,21 +182,24 @@ However, if you ever want to configure things differently here is an overview of
 all relevant configuration files as well as files which use the
 information from the questionnaire.
 
-| Folder              | File                   | Configurations                                                                               |
-| ------------------- | ---------------------- | -------------------------------------------------------------------------------------------- |
-| `/`                 | `.env`                 | proxy settings for all devs                                                                  |
-| `/`                 | `.env.local`           | personal proxy settings: provide credentials & overrides                                     |
-| `/`                 | `.ui5deployrc`         | central deployment configuration                                                             |
-| `/`                 | `mockserver.config.ts` | configuration of SAP's mock server                                                           |
-| `/`                 | `odata2ts.config.ts`   | configure generation process of OData client                                                 |
-| `/`                 | `vite.config.ts`       | configuration of Vite, i.e. the build tool                                                   |
-| `/src`              | `index.html`           | contains the app title in the title tag                                                      |
-| `/src/config`       | `app.config.ts`        | maintain all static app infos, when you need the related apps feature                        |
-| `/src/config`       | `di.config.ts`         | central depencendy injection configuration                                                   |
-| `/src/config`       | `i18n.config.ts`       | I18n settings                                                                                |
-| `/src/config`       | `odata.config.ts`      | contains the path to your OData service(s) & initializes the generated client(s)             |
-| `/src/localService` | `odata-service.xml`    | the metadata file of your OData service (needs to be downloaded)                             |
-| `/ui5`              | `Component.ts`         | contains the appId as namespace for the component (build breaks if this is configured wrong) |
-| `/ui5`              | `flpSandbox.html`      | contains the appId & the launchpad configuration for local development                       |
-| `/ui5`              | `manifest.json`        | contains the appId & appTitle and specifies the UI5 version to use                           |
-| `/ui5`              | `standalone.html`      | contains the appId                                                                           |
+| Folder              | File                           | Configurations                                                                                 |
+|---------------------|--------------------------------|------------------------------------------------------------------------------------------------|
+| `/`                 | `.env`                         | proxy settings for all devs                                                                    |
+| `/`                 | `.env.local`                   | personal proxy settings: provide credentials & overrides                                       |
+| `/`                 | `.ui5deployrc`                 | central deployment configuration                                                               |
+| `/src/config`       | `app.config.js`                | static app settings, like main odata path, default language and related apps                   |
+| `/`                 | `mockserver.config.ts`         | configuration of SAP's mock server                                                             |
+| `/`                 | `odata2ts.config.ts`           | configure generation process of OData client                                                   |
+| `/`                 | `vite.config.ts`               | configuration of Vite, i.e. the build tool                                                     |
+| `/src`              | `index.html`                   | contains the app title in the title tag                                                        |
+| `/src/config`       | `di.config.ts`                 | central dependency injection configuration                                                     |
+| `/src/config`       | `i18n.config.ts`               | I18n settings                                                                                  |
+| `/src/config`       | `odata.config.ts`              | initializes the generated OData client(s)                                                      |
+| `/src/localService` | `odata-service.xml`            | the metadata file of your OData service (needs to be downloaded)                               |
+| `/ui5`              | `Component.ts`                 | contains the appId as namespace for the component (build breaks if this is configured wrong)   |
+| `/ui5`              | `flpSandbox.html`              | contains the appId & the launchpad configuration for local development                         |
+| `/ui5`              | `manifest.json`                | contains the appId & appTitle and specifies the UI5 version to use                             |
+| `/ui5`              | `standalone.html`              | contains the appId                                                                             |
+| `/http`             | `main-service.http`            | Test file for requests against your main OData service                                         |
+| `/http`             | `http-client.env.json`         | Public configuration for HTTP test scripts; first and foremost host and path to OData services |
+| `/http`             | `http-client.private.env.json` | Private configuration for HTTP test scripts; basic auth credentials                            |
