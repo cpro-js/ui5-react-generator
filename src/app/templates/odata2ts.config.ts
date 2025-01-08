@@ -1,7 +1,6 @@
 import { ConfigFileOptions, EmitModes, Modes } from "@odata2ts/odata2ts";
-import { loadEnv } from "vite";
 
-const envVars = loadEnv("", __dirname, "PROXY_");
+const { PROXY_URL, PROXY_SAP_USERNAME, PROXY_SAP_PASSWORD, PROXY_SAP_CLIENT } = process.env;
 
 const config: ConfigFileOptions = {
   mode: Modes.service,
@@ -10,13 +9,13 @@ const config: ConfigFileOptions = {
   services: {
     odata: {
       serviceName: "MainOData",
-      sourceUrl: envVars.PROXY_URL,
+      sourceUrl: PROXY_URL,
       sourceUrlConfig: {
-        username: envVars.PROXY_SAP_USERNAME,
-        password: envVars.PROXY_SAP_PASSWORD,
+        username: PROXY_SAP_USERNAME,
+        password: PROXY_SAP_PASSWORD,
         custom: {
           params: {
-            "sap-client": envVars.PROXY_SAP_CLIENT,
+            "sap-client": PROXY_SAP_CLIENT,
           },
         },
       },
