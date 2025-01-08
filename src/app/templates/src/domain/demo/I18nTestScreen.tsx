@@ -1,17 +1,7 @@
 import { I18nService, observer, useInjection } from "@cpro-js/react-core";
 import { NotificationService } from "@cpro-js/react-ui5-notification";
 import { CurrencyInput, DatePicker, NumberInput } from "@cpro-js/react-ui5-webcomponents-form";
-import {
-  Bar,
-  BarDesign,
-  Button,
-  ButtonDesign,
-  DynamicPage,
-  DynamicPageHeader,
-  DynamicPageTitle,
-  Label,
-  Title,
-} from "@ui5/webcomponents-react";
+import { Bar, Button, DynamicPage, DynamicPageHeader, DynamicPageTitle, Label, Title } from "@ui5/webcomponents-react";
 import React, { FC, useCallback } from "react";
 
 export const I18nTestScreen: FC = observer(() => {
@@ -33,25 +23,23 @@ export const I18nTestScreen: FC = observer(() => {
 
   return (
     <DynamicPage
-      headerTitle={<DynamicPageTitle header={<Title>{pageTitle}</Title>} />}
-      headerContent={<DynamicPageHeader>My Header Content, e.g. search form</DynamicPageHeader>}
-      footer={
+      titleArea={<DynamicPageTitle heading={<Title>{pageTitle}</Title>} />}
+      headerArea={<DynamicPageHeader>My Header Content, e.g. search form</DynamicPageHeader>}
+      footerArea={
         <Bar
-          design={BarDesign.FloatingFooter}
+          design="FloatingFooter"
           endContent={
             <>
-              <Button design={ButtonDesign.Positive} onClick={handleSuccess}>
+              <Button design="Positive" onClick={handleSuccess}>
                 Success Message
               </Button>
-              <Button design={ButtonDesign.Negative} onClick={handleError}>
+              <Button design="Negative" onClick={handleError}>
                 Error Message
               </Button>
             </>
           }
         />
       }
-      headerContentPinnable
-      showHideHeaderButton
     >
       <section>
         <h2>Hello World!</h2>
