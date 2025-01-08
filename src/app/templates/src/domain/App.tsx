@@ -18,7 +18,7 @@ import ModalContainer from "react-modal-promise";
 
 import { createContainer } from "../config/di.config";
 import { AppRouter } from "./AppRouter";
-import { Connection } from "./component/Connection";
+import { Connection } from "../component/Connection";
 
 export interface AppProps {
   resolveUri: (path: string) => string;

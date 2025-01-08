@@ -2,7 +2,7 @@ import { observer } from "@cpro-js/react-core";
 import { Button, ButtonDesign, Title } from "@ui5/webcomponents-react";
 import { FC, useCallback } from "react";
 import { useHistory } from "react-router";
-import { MainLayout } from "../component/MainLayout";
+import { MainLayout } from "../../component/MainLayout";
 import { useTestScreenStyles } from "./TestScreen.style";
 
 export const TestScreen: FC = observer(() => {
