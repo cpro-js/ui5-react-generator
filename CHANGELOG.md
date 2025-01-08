@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.3.0...generator-ui5-react-v1.4.0) (2025-01-08)
+
+
+### Features
+
+* add hook folder with some useful hooks ([2e981e3](https://github.com/cpro-js/generator-ui5-react/commit/2e981e34c54a40fb429f6a79e489fefbc2b740af))
+* introduce dotenvx to retieve env vars for odata2ts.config.ts ([1322448](https://github.com/cpro-js/generator-ui5-react/commit/1322448eefd58c9f441c4c58c60d89ae4464e711))
+* silence deprecation warnings for deps ins SASS ([4b74bde](https://github.com/cpro-js/generator-ui5-react/commit/4b74bde06780dca5d5e3400732125fd8321c63ad))
+* switch to sap_horizon theme ([5989b48](https://github.com/cpro-js/generator-ui5-react/commit/5989b48f5a99877339a19cd4cf7f8885f1f617aa))
+* update to web components 2.5 and adapt to that ([b3075fb](https://github.com/cpro-js/generator-ui5-react/commit/b3075fbbd266fec7a88cb304e3231a0d71eff0a1))
+* use scss instead of jss ([37d59d4](https://github.com/cpro-js/generator-ui5-react/commit/37d59d448a687a1e50f64815612b897392e9a420))
+
+
+### Bug Fixes
+
+* add httpyac to static files ([df8364e](https://github.com/cpro-js/generator-ui5-react/commit/df8364e4f391052a7ce01d785b79c85663bad1aa))
+* changed file paths & more mistakes ([4dffa41](https://github.com/cpro-js/generator-ui5-react/commit/4dffa412718e9ea65f24e6898252e7cc15594297))
+* copy hook files ([50206e3](https://github.com/cpro-js/generator-ui5-react/commit/50206e3d104144d2957dce6897933783a0ce3a23))
+* mockserver config ignores CustomFileLoader ([628ac36](https://github.com/cpro-js/generator-ui5-react/commit/628ac363a031a2560dcf01df4af6af5eefc22f0c))
+
 ## [1.3.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.2.0...generator-ui5-react-v1.3.0) (2024-12-14)
 
 
