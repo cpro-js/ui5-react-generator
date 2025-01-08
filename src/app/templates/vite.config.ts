@@ -30,6 +30,13 @@ export default defineConfig(({ mode }) => {
       proxy: proxyConfig,
     }),
     {
+      css: {
+        preprocessorOptions: {
+          scss: {
+            api: "modern-compiler",
+          },
+        },
+      },
       test: {
         // see https://vitest.dev/config/#configuration
       },
