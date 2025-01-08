@@ -1,7 +1,7 @@
 import { I18nService } from "@cpro-js/react-core";
 import { FetchClient } from "@odata2ts/http-client-fetch";
 import { MAIN_SERVICE_PATH } from "../../app.config";
-import { MainODataService } from "../../src-generated/odata-service/MainODataService";
+import { MainODataService } from "../../src-generated/main-service/MainODataService";
 
 /**
  * Helper function to bundle logic around creating the OData client
