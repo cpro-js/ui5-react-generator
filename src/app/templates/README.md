@@ -113,7 +113,7 @@ individual settings like connecting to a different system. This file should not
 be committed (.gitignore is already configured appropriately).
 
 Having done that run `npm run gen-odata`.
-It will download the metadata file to `src/localService/odata-service.xml` and
+It will download the metadata file to `src/localService/main-service.xml` and
 generate the OData client.
 
 ## Features & Configuration
@@ -175,7 +175,7 @@ mock data:
 
 The mock server is configured via `mockserver.config.ts`.
 
-## Overview Configuration Files
+## Overview of Configuration Files
 
 If you've correctly filled out the questionnaire of the generator, then you're good to go.
 However, if you ever want to configure things differently here is an overview of

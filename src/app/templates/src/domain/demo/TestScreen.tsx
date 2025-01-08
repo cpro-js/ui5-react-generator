@@ -4,6 +4,7 @@ import { FC, useCallback } from "react";
 import { useHistory } from "react-router";
 import { MainLayout } from "../../component/MainLayout";
 import { useTestScreenStyles } from "./TestScreen.style";
+import styleClasses from "./TestScreen.module.scss";
 
 export const TestScreen: FC = observer(() => {
   // hook for routing => react-router
@@ -30,6 +31,9 @@ export const TestScreen: FC = observer(() => {
       }
     >
       <Title>My very first Test Page!</Title>
+
+      <div className={styleClasses.myTitle}>Testing Styling</div>
+
     </MainLayout>
   );
 });
