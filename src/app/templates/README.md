@@ -70,7 +70,7 @@ for a second time.
 ## Setup
 
 When developing with VSCode install the following REST client: `httpyac` ([docs](https://httpyac.github.io/guide/)).
-This one works a tad better than the regular REST client in regard to environment variables. 
+This one works a tad better than the regular REST client in regard to environment variables.
 
 ### Initial Setup
 
@@ -101,7 +101,6 @@ Create the file `http/http-client.private.env.json` and copy the following conte
 
 Replace the "TODO" with your basic auth credentials. You can use this generator, which works offline, to generate
 the basic auth credentials: [Blitter.se](https://www.blitter.se/utils/basic-authentication-header-generator/).
-
 
 ### Setup OData Service
 
@@ -183,11 +182,11 @@ all relevant configuration files as well as files which use the
 information from the questionnaire.
 
 | Folder              | File                           | Configurations                                                                                 |
-|---------------------|--------------------------------|------------------------------------------------------------------------------------------------|
+| ------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------- |
 | `/`                 | `.env`                         | proxy settings for all devs                                                                    |
 | `/`                 | `.env.local`                   | personal proxy settings: provide credentials & overrides                                       |
 | `/`                 | `.ui5deployrc`                 | central deployment configuration                                                               |
-| `/src/config`       | `app.config.js`                | static app settings, like main odata path, default language and related apps                   |
+| `/`                 | `app.config.js`                | static app settings, like main odata path, default language and related apps                   |
 | `/`                 | `mockserver.config.ts`         | configuration of SAP's mock server                                                             |
 | `/`                 | `odata2ts.config.ts`           | configure generation process of OData client                                                   |
 | `/`                 | `vite.config.ts`               | configuration of Vite, i.e. the build tool                                                     |

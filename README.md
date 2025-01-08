@@ -46,6 +46,7 @@ For testing any development of this package:
 2. `npm link`
 3. create a new folder for the test app
 4. create the test app: `yo ui5-react`
+5. start & test the app: `npm run start`
 
 ## License
 
