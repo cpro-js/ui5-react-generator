@@ -1,5 +1,5 @@
 import { observer } from "@cpro-js/react-core";
-import { Bar, BarDesign, DynamicPage, DynamicPageHeader, DynamicPageTitle } from "@ui5/webcomponents-react";
+import { Bar, DynamicPage, DynamicPageHeader, DynamicPageTitle, Label, Title } from "@ui5/webcomponents-react";
 import { FC, ReactElement, ReactNode } from "react";
 
 export interface MainLayoutProps {
@@ -12,7 +12,7 @@ export interface MainLayoutProps {
   /**
    * Subtitle of the page.
    */
-  pageSubTitle?: ReactNode;
+  pageSubTitle?: string | ReactElement;
 
   /**
    * The search form which will be rendered in the header.
@@ -30,7 +30,7 @@ export interface MainLayoutProps {
   /**
    * Show hide button between header and content body.
    */
-  showHeaderHideButton?: boolean;
+  // showHeaderHideButton?: boolean;
 
   /**
    * Content to be placed at the beginning of the footer.
@@ -55,13 +55,12 @@ export interface MainLayoutProps {
   pageTitleActions?: ReactElement;
 }
 
-export const MainLayout: FC<MainLayoutProps> = observer((props) => {
+export const MainLayout: FC = observer((props) => {
   const {
     pageTitle,
     pageSubTitle,
     headerContent,
     showHeaderAlways,
-    showHeaderHideButton,
     showHeaderPinButton,
     footerStartContent,
     footerEndContent,
@@ -71,22 +70,22 @@ export const MainLayout: FC<MainLayoutProps> = observer((props) => {
 
   return (
     <DynamicPage
-      headerTitle={
+      titleArea={
         <DynamicPageTitle
-          header={pageTitle}
-          subHeader={pageSubTitle}
-          actions={pageTitleActions && <>{pageTitleActions}</>}
+          heading={<Title>{pageTitle}</Title>}
+          subheading={typeof pageSubTitle === "string" ? <Label>{pageSubTitle}</Label> : pageSubTitle}
+          actionsBar={pageTitleActions && <>{pageTitleActions}</>}
         />
       }
-      headerContent={headerContent ? <DynamicPageHeader>{headerContent}</DynamicPageHeader> : undefined}
-      alwaysShowContentHeader={!!showHeaderAlways}
-      footer={
+      headerArea={headerContent ? <DynamicPageHeader>{headerContent}</DynamicPageHeader> : undefined}
+      headerPinned={!!showHeaderAlways}
+      hidePinButton={!showHeaderPinButton}
+      footerArea={
         footerStartContent || footerEndContent ? (
-          <Bar design={BarDesign.FloatingFooter} startContent={footerStartContent} endContent={footerEndContent} />
+          <Bar design="FloatingFooter" startContent={footerStartContent} endContent={footerEndContent} />
         ) : undefined
       }
-      headerContentPinnable={!!showHeaderPinButton}
-      showHideHeaderButton={!!showHeaderHideButton}
+      showFooter={!!footerStartContent || !!footerEndContent}
     >
       {children}
     </DynamicPage>

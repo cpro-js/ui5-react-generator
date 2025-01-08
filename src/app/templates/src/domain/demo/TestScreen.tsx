@@ -1,5 +1,5 @@
 import { observer } from "@cpro-js/react-core";
-import { Button, ButtonDesign, Title } from "@ui5/webcomponents-react";
+import { Button, Title } from "@ui5/webcomponents-react";
 import { FC, useCallback } from "react";
 import { useHistory } from "react-router";
 import { MainLayout } from "../../component/MainLayout";
@@ -22,7 +22,7 @@ export const TestScreen: FC = observer(() => {
       headerContent={<p>My Header Content</p>}
       footerEndContent={
         <>
-          <Button design={ButtonDesign.Transparent} onClick={goToI18n}>
+          <Button design="Transparent" onClick={goToI18n}>
             Go to I18n Test Screen!
           </Button>
         </>
@@ -31,7 +31,6 @@ export const TestScreen: FC = observer(() => {
       <Title>My very first Test Page!</Title>
 
       <div className={styleClasses.myTitle}>Testing Styling</div>
-
     </MainLayout>
   );
 });

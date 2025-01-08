@@ -1,11 +1,10 @@
 import "@ui5/webcomponents-fiori/dist/illustrations/SimpleConnection.js";
-
 import { useI18n } from "@cpro-js/react-core";
-import { Dialog, IllustratedMessage, IllustrationMessageSize, IllustrationMessageType } from "@ui5/webcomponents-react";
+import { Dialog, IllustratedMessage } from "@ui5/webcomponents-react";
 import { FC, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export const Connection: FC<{}> = () => {
+export const Connection: FC = () => {
   const [online, setOnline] = useState(true);
   const { t } = useI18n();
 
@@ -35,13 +34,13 @@ export const Connection: FC<{}> = () => {
       open={true}
       headerText={t("general.noConnection.caption")}
       footer={null}
-      onBeforeClose={event => {
+      onBeforeClose={(event) => {
         event.preventDefault();
       }}
     >
       <IllustratedMessage
-        name={IllustrationMessageType.SimpleConnection}
-        size={IllustrationMessageSize.Auto}
+        name="SimpleConnection"
+        design="Auto"
         titleText={t("general.noConnection.title")}
         subtitleText={t("general.noConnection.text")}
       />

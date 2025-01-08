@@ -1,7 +1,9 @@
 @use "../../style/base";
 
 .myTitle {
-  color: green;
-  margin: base.$sap-margin-large;
+  background-color: darkcyan;
+  color: darkgoldenrod;
+  margin-top: base.$sap-margin-medium;
+  padding: base.$sap-padding-large;
 }
 
