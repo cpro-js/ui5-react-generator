@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.4.0...generator-ui5-react-v1.5.0) (2025-01-10)
+
+
+### Features
+
+* improved handling of static vars & env vars ([2e80af3](https://github.com/cpro-js/generator-ui5-react/commit/2e80af31be9a4f88ce56d491fcc3560b2cd5a133))
+
 ## [1.4.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.3.0...generator-ui5-react-v1.4.0) (2025-01-08)
 
 
