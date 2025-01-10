@@ -9,7 +9,20 @@
   "semi": true,
   "singleQuote": false,
   "singleAttributePerLine": false,
-  "importOrderParsers": ["typescript", "jsx", "decorators"],
+  "importOrderParsers": [
+    "typescript",
+    "jsx",
+    "decorators"
+  ],
+  "importOrder": [
+    "<TYPES>",
+    "<TYPES>^[.]",
+    "<BUILTIN_MODULES>",
+    "",
+    "^sap/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^[.]"
+  ],
   "overrides": [
     {
       "files": [
@@ -19,6 +32,12 @@
       "options": {
         "xmlSelfClosingTags": true,
         "xmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": ".env",
+      "options": {
+        "keySeparator": "="
       }
     }
   ]

@@ -1,4 +1,4 @@
-import { APPS } from "../../app.config";
+import { APPS } from "../app.config";
 
 /**
  * Create the navigation intent, which is the full hash fragment needed to navigate to a specific app.
@@ -40,5 +40,3 @@ export function getAppByPath(path: string) {
 export function stripLeadingZeros(text: string) {
   return text.replace(/^0*/, "");
 }
-
-

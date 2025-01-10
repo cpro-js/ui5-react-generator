@@ -10,6 +10,7 @@
   "semi": true,
   "singleQuote": false,
   "singleAttributePerLine": false,
+  "importOrder": ["<TYPES>", "<TYPES>^[.]", "<BUILTIN_MODULES>", "", "^sap/(.*)$", "<THIRD_PARTY_MODULES>", "^[.]"],
   "importOrderParsers": ["typescript", "jsx", "decorators"],
   "overrides": [
     {

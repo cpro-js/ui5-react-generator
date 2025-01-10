@@ -83,8 +83,8 @@ Create the file `.env.local` and copy the following contents into it:
 
 ```
 # SAP user credentials
-PROXY_SAP_USERNAME=
-PROXY_SAP_PASSWORD=
+SAP_USERNAME=
+SAP_PASSWORD=
 ```
 
 Then set your username and password for the system.

@@ -1,4 +1,7 @@
 @language=<%= defaultLanguage %>
+@sapClient=<%= sapClientForDev %>
+
+@mainService={{host}}<%= odataServicePath %>
 
 ###
 # @name metadata
@@ -8,6 +11,6 @@ Authorization: {{auth}}
 ###
 # @name list TODO
 GET {{mainService}}/TODO
+Authorization: {{auth}}
 Accept: application/json
 Accept-Language: {{language}}
-Authorization: {{auth}}

@@ -24,12 +24,20 @@
   "[xml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "auto-close-tag.disableOnLanguage": ["typescript"],
   "editor.formatOnSave": true,
   "prettier.requireConfig": true,
   // fix autoformat: default value of afterDelay doesn't trigger autoformat
   // see https://github.com/microsoft/vscode/issues/45997
   "files.autoSave": "off",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "json.schemas": [
+    {
+      "fileMatch": [".prettierrc"],
+      "url": "https://json.schemastore.org/prettierrc"
+    }
+  ]
 }
