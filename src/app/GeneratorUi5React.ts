@@ -63,7 +63,13 @@ export class Ui5ReactGenerator extends Generator {
         type: "input",
         name: "odataServicePath",
         default: "/TripPinRESTierService",
-        message: "Absolute path to the OData service (without protocol and host):",
+        message: "Absolute path to the OData service (without protocol and host, but with leading slash):",
+      },
+      {
+        type: "input",
+        name: "proxyPath",
+        default: "/TripPinRESTierService",
+        message: "The path that gets proxied (least common denominator, e.g. /sap/opu):",
       },
       {
         type: "input",
@@ -120,9 +126,13 @@ export class Ui5ReactGenerator extends Generator {
     this.answers.odataServicePath = odataPath;
     this.answers.fullServiceUrl = this.answers.serverUrl + odataPath;
 
-    const authString = `${this.answers.userName}:${this.answers.password}`;
-    const encoded = Buffer.from(authString, "binary").toString("base64");
-    this.answers.basicAuth = `Basic ${encoded}`;
+    // generate basic auth
+    let basicAuthEncoded = "TODO";
+    if (this.answers.userName && this.answers.password) {
+      const authString = `${this.answers.userName}:${this.answers.password}`;
+      basicAuthEncoded = Buffer.from(authString, "binary").toString("base64");
+    }
+    this.answers.basicAuth = `Basic ${basicAuthEncoded}`;
   }
 
   public writing() {

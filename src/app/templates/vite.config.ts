@@ -6,15 +6,15 @@ import manifest from "./ui5/manifest.json";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // load all PROXY_ env vars
-  process.env = { ...process.env, ...loadEnv(mode, __dirname, "PROXY_") };
+  // load all env vars
+  const appEnvs = loadEnv(mode, __dirname, "APP_");
 
   const proxyConfig = {
-    url: process.env.PROXY_URL,
-    username: process.env.PROXY_SAP_USERNAME,
-    password: process.env.PROXY_SAP_PASSWORD,
+    url: appEnvs.APP_BASE_URL + appEnvs.APP_PROXY_PATH,
+    username: appEnvs.APP_SAP_USERNAME,
+    password: appEnvs.APP_SAP_PASSWORD,
     queryParams: {
-      "sap-client": process.env.PROXY_SAP_CLIENT,
+      "sap-client": appEnvs.APP_SAP_CLIENT,
     },
   };
 
@@ -30,6 +30,7 @@ export default defineConfig(({ mode }) => {
       proxy: proxyConfig,
     }),
     {
+      envPrefix: "APP_",
       css: {
         preprocessorOptions: {
           scss: {
