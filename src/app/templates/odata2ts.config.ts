@@ -1,6 +1,6 @@
 import { ConfigFileOptions, EmitModes, Modes } from "@odata2ts/odata2ts";
 
-const { APP_BASE_URL, APP_SAP_PASSWORD, APP_SAP_USERNAME, APP_SAP_CLIENT, APP_MAIN_SERVICE_PATH } = process.env;
+const { BASE_URL, SAP_PASSWORD, SAP_USERNAME, SAP_CLIENT, APP_MAIN_SERVICE_PATH } = process.env;
 
 const config: ConfigFileOptions = {
   mode: Modes.service,
@@ -12,15 +12,15 @@ const config: ConfigFileOptions = {
       serviceName: "MainOData",
       source: "src/localService/main-service.xml",
       output: "src-generated/main-service",
-      sourceUrl: APP_BASE_URL + APP_MAIN_SERVICE_PATH,
+      sourceUrl: BASE_URL + APP_MAIN_SERVICE_PATH,
       // if OData service is in development, set this to true
       refreshFile: false,
       sourceUrlConfig: {
-        username: APP_SAP_USERNAME,
-        password: APP_SAP_PASSWORD,
+        username: SAP_USERNAME,
+        password: SAP_PASSWORD,
         custom: {
           params: {
-            "sap-client": APP_SAP_CLIENT,
+            "sap-client": SAP_CLIENT,
           },
         },
       },
