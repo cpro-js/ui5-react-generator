@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.6.0...generator-ui5-react-v1.7.0) (2025-01-14)
+
+
+### Features
+
+* add clsx as useful dependency ([9dd5fa9](https://github.com/cpro-js/generator-ui5-react/commit/9dd5fa9f5d30cfd4cdbea8df57f15aa9ca11a375))
+* cross env compatible deployments ([400b258](https://github.com/cpro-js/generator-ui5-react/commit/400b258550e96ea27c3f96f39394ac78a949cab8))
+* use env vars for deployment ([21648e7](https://github.com/cpro-js/generator-ui5-react/commit/21648e76d0dd93b151df2284e3b3bf49672aa9ac))
+* use UI5's fullWidth within launchpad context ([d80da61](https://github.com/cpro-js/generator-ui5-react/commit/d80da61e5a5739a64b1d8e45047cb37e12100723))
+* use variables for app.config.ts ([2ebc83c](https://github.com/cpro-js/generator-ui5-react/commit/2ebc83cb16a7c13a1da61556d60ae822d3aed415))
+
+
+### Bug Fixes
+
+* MainLayout is missing prop interface ([94239c0](https://github.com/cpro-js/generator-ui5-react/commit/94239c0ba28aa71b3d9ff3c609c78cce6d7c7c96))
+
 ## [1.6.0](https://github.com/cpro-js/generator-ui5-react/compare/generator-ui5-react-v1.5.0...generator-ui5-react-v1.6.0) (2025-01-13)
 
 
