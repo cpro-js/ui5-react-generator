@@ -63,8 +63,7 @@ The central configuration file is `.ui5deployrc` in the root folder.
 `npm run deploy`
 
 This command will automatically build the app beforehand and then deploy it to the target SAP system.
-The credentials are taken from `.env.local`. Currently, this only works for Windows, but
-it should be easy to adapt to shell syntax.
+The credentials are taken from `.env.local`.
 
 If you encounter `401` as response status, then your credentials are wrong.
 The deployment fails sometimes with an inconceivable error message, just repeat the command then
