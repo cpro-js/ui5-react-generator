@@ -55,7 +55,7 @@ export interface MainLayoutProps {
   pageTitleActions?: ReactElement;
 }
 
-export const MainLayout: FC = observer((props) => {
+export const MainLayout: FC<MainLayoutProps> = observer((props) => {
   const {
     pageTitle,
     pageSubTitle,
