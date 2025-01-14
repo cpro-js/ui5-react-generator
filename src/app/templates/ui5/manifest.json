@@ -30,7 +30,7 @@
       "tablet": true,
       "phone": true
     },
-    "fullWidth": false,
+    "fullWidth": true,
     "technology": "UI5"
   },
   "sap.ui5": {
