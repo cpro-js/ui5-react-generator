@@ -9,9 +9,10 @@ import { AppTileInfo } from "./domain/AppModel";
  */
 export const APPS: Array<AppTileInfo> = [
   {
-    title: "SmartPack",
+    title: "<%= appTitle %>",
     icon: "sap-icon://accept",
-    action: "outbound",
+    semanticObject: "<%= semanticObject %>",
+    action: "<%= action %>",
     path: "/",
   },
 ];
