@@ -60,10 +60,13 @@ Changing any file won't reload the changes.
 The app is deployed with the help of [ui5-nwabap-deployer-cli](https://www.npmjs.com/package/ui5-nwabap-deployer-cli).
 The central configuration file is `.ui5deployrc` in the root folder.
 
-`npm run deploy -- --user YOUR_USER --pwd YOUR_PASSWORD`
+`npm run deploy`
 
 This command will automatically build the app beforehand and then deploy it to the target SAP system.
+The credentials are taken from `.env.local`. Currently, this only works for Windows, but
+it should be easy to adapt to shell syntax.
 
+If you encounter `401` as response status, then your credentials are wrong.
 The deployment fails sometimes with an inconceivable error message, just repeat the command then
 for a second time.
 
