@@ -6,7 +6,7 @@
   "scripts": {
     "build": "odata2ts && tsc && vite build",
     "predeploy": "npm run build",
-    "deploy": "dotenvx run --env-file=.env.local -- cmd /C ui5-deployer deploy --user %SAP_USERNAME% --pwd %SAP_PASSWORD%",
+    "deploy": "node deploy.js",
     "gen-odata": "dotenvx run --env-file=.env --env-file=.env.local -- odata2ts",
     "preview": "npm run build && vite preview",
     "preview-mock": "npm run build && vite preview --mode mock ",
