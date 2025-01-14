@@ -43,6 +43,6 @@ lerna-debug.log
 !.yarn/versions
 # !.yarn/cache
 
-# TypeScript incremental compilation cache
+# Build Artefacts
 *.tsbuildinfo
 vite.config.ts\.*
