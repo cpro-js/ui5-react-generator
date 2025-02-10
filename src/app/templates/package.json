@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@cpro-js/history-ui5": "^4.0.0",
-    "@cpro-js/react-core": "^0.3.0",
+    "@cpro-js/react-core": "^0.4.0",
     "@cpro-js/react-ui5-notification": "^2.0.2",
     "@cpro-js/react-ui5-webcomponents-form": "^2.0.2",
     "@odata2ts/http-client-fetch": "^0.8.0",
