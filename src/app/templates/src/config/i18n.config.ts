@@ -1,4 +1,4 @@
-import { I18nModuleRegistryOptions } from "@cpro-js/react-core";
+import type { I18nModuleRegistryOptions } from "@cpro-js/react-core";
 
 const { APP_DEFAULT_LANGUAGE } = import.meta.env;
 

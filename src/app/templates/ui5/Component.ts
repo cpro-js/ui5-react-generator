@@ -4,9 +4,9 @@ import Core from "sap/ui/core/Core";
 import EventBus from "sap/ui/core/EventBus";
 import RenderManager from "sap/ui/core/RenderManager";
 import HashChanger from "sap/ui/core/routing/HashChanger";
-import UIComponent, { $UIComponentSettings } from "sap/ui/core/UIComponent";
+import UIComponent, { type $UIComponentSettings } from "sap/ui/core/UIComponent";
 import Device from "sap/ui/Device";
-import { render, RenderOptions } from "virtual:@cpro-js/vite-ui5-integration-plugin/runtime";
+import { render, type RenderOptions } from "virtual:@cpro-js/vite-ui5-integration-plugin/runtime";
 
 /**
  * @namespace <%= appId %>

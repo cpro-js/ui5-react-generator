@@ -1,5 +1,5 @@
 import { fromPromise } from "@cpro-js/react-core";
-import { IPromiseBasedObservable } from "mobx-utils/lib/from-promise";
+import type { IPromiseBasedObservable } from "mobx-utils/lib/from-promise";
 import { useEffect, useRef, useState } from "react";
 
 import { useLatestCallback } from "./useLatestCallback";

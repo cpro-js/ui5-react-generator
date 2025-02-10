@@ -3,7 +3,7 @@ import "@ui5/webcomponents-fiori/dist/Assets.js";
 import "@ui5/webcomponents-react/dist/Assets";
 
 import { I18nService } from "@cpro-js/react-core";
-import { Container, ContainerProvider, ObservablePromise, fromPromise, observer } from "@cpro-js/react-core";
+import { Container, ContainerProvider, type ObservablePromise, fromPromise, observer } from "@cpro-js/react-core";
 import { NotificationRenderer } from "@cpro-js/react-ui5-notification";
 import { NumberContextProvider } from "@cpro-js/react-ui5-webcomponents-form";
 import {

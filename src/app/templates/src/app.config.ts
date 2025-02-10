@@ -1,4 +1,4 @@
-import { AppTileInfo } from "./domain/AppModel";
+import type { AppTileInfo } from "./domain/AppModel";
 
 /**
  * Static configuration for all our "apps" as tiles within Launchpad.

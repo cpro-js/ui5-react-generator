@@ -1,6 +1,6 @@
 import { observer } from "@cpro-js/react-core";
 import { Bar, DynamicPage, DynamicPageHeader, DynamicPageTitle, Label, Title } from "@ui5/webcomponents-react";
-import { FC, ReactElement, ReactNode } from "react";
+import type { FC, ReactElement, ReactNode } from "react";
 
 export interface MainLayoutProps {
   /**
