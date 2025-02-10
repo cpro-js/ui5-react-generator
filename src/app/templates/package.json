@@ -51,7 +51,7 @@
     "@odata2ts/odata2ts": "^0.39.1",
     "@prettier/plugin-xml": "^3.4.1",
     "@sap-ux/fe-mockserver-core": "^1.4.13",
-    "@sapui5/types": "^1.122.2",
+    "@sapui5/types": "~1.120.25",
     "@testing-library/react": "^15.0.2",
     "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.12.7",
