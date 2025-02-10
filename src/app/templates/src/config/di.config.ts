@@ -1,8 +1,7 @@
 import { Container, createI18nModuleRegistry, I18nService } from "@cpro-js/react-core";
 import { createNotificationRegistry } from "@cpro-js/react-ui5-notification";
 import { FetchClient } from "@odata2ts/http-client-fetch";
-// @ts-ignore: no typings available
-import { setLanguage } from "@ui5/webcomponents-base/dist/config/Language";
+import { setLanguage } from "@ui5/webcomponents-base/dist/config/Language.js";
 import { MainODataService } from "../../src-generated/main-service/MainODataService";
 import { createI18nConfig } from "./i18n.config";
 
