@@ -1,7 +1,7 @@
-import { fromPromise } from "@cpro-js/react-core";
 import type { IPromiseBasedObservable } from "mobx-utils/lib/from-promise";
-import { useEffect, useRef, useState } from "react";
 
+import { fromPromise } from "@cpro-js/react-core";
+import { useEffect, useRef, useState } from "react";
 import { useLatestCallback } from "./useLatestCallback";
 
 export const usePromise = <T>(
@@ -18,14 +18,14 @@ export const usePromise = <T>(
     }
   });
   const refresh = useLatestCallback(() => {
-    setRefreshCounter(counter => {
+    setRefreshCounter((counter) => {
       updatePromise();
       return counter === 0 ? 1 : 0;
     });
   });
   const promiseRef = useRef<IPromiseBasedObservable<T> | null>(null);
   const setPromise = useLatestCallback((promise: Promise<T>) => {
-    setRefreshCounter(counter => {
+    setRefreshCounter((counter) => {
       promiseRef.current = fromPromise(promise);
       return counter === 0 ? 1 : 0;
     });

@@ -1,7 +1,8 @@
-import { createUI5History } from "@cpro-js/history-ui5";
-import { type FC, useMemo } from "react";
-import { Route, Router, Switch } from "react-router-dom";
+import type { FC } from "react";
 
+import { createUI5History } from "@cpro-js/history-ui5";
+import { useMemo } from "react";
+import { Route, Router, Switch } from "react-router-dom";
 import { I18nTestScreen } from "./demo/I18nTestScreen";
 import { TestScreen } from "./demo/TestScreen";
 

@@ -2,11 +2,8 @@
 import "vite/modulepreload-polyfill";
 import "reflect-metadata";
 
-// @ts-ignore: no typings available
-import { setAnimationMode } from "@ui5/webcomponents-base/dist/config/AnimationMode";
-// @ts-ignore: no typings available
-import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme";
-// @ts-ignore: no typings available
+import { setAnimationMode } from "@ui5/webcomponents-base/dist/config/AnimationMode.js";
+import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme.js";
 import { createRoot } from "react-dom/client";
 import { register } from "virtual:@cpro-js/vite-ui5-integration-plugin/runtime";
 import { APPS } from "./app.config";
@@ -32,9 +29,9 @@ register((rootNode, { component } = {}) => {
     }
 
     setAnimationMode(component.getAnimationMode());
-    setTheme(component.getTheme());
+    void setTheme(component.getTheme());
     component.subscribeToThemeChanges((theme) => {
-      setTheme(theme);
+      void setTheme(theme);
     });
   }
 

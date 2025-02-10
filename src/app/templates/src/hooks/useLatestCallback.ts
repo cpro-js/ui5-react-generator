@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-
 import { useLatestRef } from "./useLatestRef";
 
 /**
@@ -10,9 +9,7 @@ import { useLatestRef } from "./useLatestRef";
  *
  * @param callback
  */
-export const useLatestCallback = <T extends (...args: any[]) => any>(
-  callback: T | undefined
-): T => {
+export const useLatestCallback = <T extends (...args: any[]) => any>(callback: T | undefined): T => {
   const callbackRef = useLatestRef(callback);
 
   return useMemo(() => ((...args) => callbackRef.current?.(...args)) as T, []);

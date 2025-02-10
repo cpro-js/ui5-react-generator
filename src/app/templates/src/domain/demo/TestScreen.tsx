@@ -1,6 +1,8 @@
+import type { FC } from "react";
+
 import { observer } from "@cpro-js/react-core";
 import { Button, Title } from "@ui5/webcomponents-react";
-import { type FC, useCallback } from "react";
+import { useCallback } from "react";
 import { useHistory } from "react-router";
 import { MainLayout } from "../../component/MainLayout";
 // CSS integration example

@@ -1,8 +1,10 @@
+import type { FC } from "react";
+
 import { I18nService, observer, useInjection } from "@cpro-js/react-core";
 import { NotificationService } from "@cpro-js/react-ui5-notification";
 import { CurrencyInput, DatePicker, NumberInput } from "@cpro-js/react-ui5-webcomponents-form";
 import { Bar, Button, DynamicPage, DynamicPageHeader, DynamicPageTitle, Label, Title } from "@ui5/webcomponents-react";
-import { type FC, useCallback } from "react";
+import { useCallback } from "react";
 
 export const I18nTestScreen: FC = observer(() => {
   const { showSuccess, showError } = useInjection(NotificationService);

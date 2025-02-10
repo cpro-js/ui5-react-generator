@@ -2,8 +2,9 @@ import "@ui5/webcomponents/dist/Assets.js";
 import "@ui5/webcomponents-fiori/dist/Assets.js";
 import "@ui5/webcomponents-react/dist/Assets";
 
-import { I18nService } from "@cpro-js/react-core";
-import { Container, ContainerProvider, type ObservablePromise, fromPromise, observer } from "@cpro-js/react-core";
+import type { ObservablePromise } from "@cpro-js/react-core";
+
+import { Container, ContainerProvider, fromPromise, I18nService, observer } from "@cpro-js/react-core";
 import { NotificationRenderer } from "@cpro-js/react-ui5-notification";
 import { NumberContextProvider } from "@cpro-js/react-ui5-webcomponents-form";
 import {
@@ -13,12 +14,11 @@ import {
   FlexBoxJustifyContent,
   ThemeProvider,
 } from "@ui5/webcomponents-react";
-import React, { Component } from "react";
+import { Component } from "react";
 import ModalContainer from "react-modal-promise";
-
+import { Connection } from "../component/Connection";
 import { createContainer } from "../config/di.config";
 import { AppRouter } from "./AppRouter";
-import { Connection } from "../component/Connection";
 
 export interface AppProps {
   resolveUri: (path: string) => string;

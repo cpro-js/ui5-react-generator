@@ -1,12 +1,15 @@
 import type MessageBox from "sap/m/MessageBox";
 import type UI5Event from "sap/ui/base/Event";
+import type { $UIComponentSettings } from "sap/ui/core/UIComponent";
+import type { RenderOptions } from "virtual:@cpro-js/vite-ui5-integration-plugin/runtime";
+
 import Core from "sap/ui/core/Core";
 import EventBus from "sap/ui/core/EventBus";
 import RenderManager from "sap/ui/core/RenderManager";
 import HashChanger from "sap/ui/core/routing/HashChanger";
-import UIComponent, { type $UIComponentSettings } from "sap/ui/core/UIComponent";
+import UIComponent from "sap/ui/core/UIComponent";
 import Device from "sap/ui/Device";
-import { render, type RenderOptions } from "virtual:@cpro-js/vite-ui5-integration-plugin/runtime";
+import { render } from "virtual:@cpro-js/vite-ui5-integration-plugin/runtime";
 
 /**
  * @namespace <%= appId %>

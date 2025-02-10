@@ -1,7 +1,10 @@
 import "@ui5/webcomponents-fiori/dist/illustrations/SimpleConnection.js";
+
+import type { FC } from "react";
+
 import { useI18n } from "@cpro-js/react-core";
 import { Dialog, IllustratedMessage } from "@ui5/webcomponents-react";
-import { type FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 export const Connection: FC = () => {

@@ -1,4 +1,6 @@
-import { type ForwardedRef, useEffect, useRef } from "react";
+import type { ForwardedRef } from "react";
+
+import { useEffect, useRef } from "react";
 
 /**
  * Taken over from https://github.com/facebook/react/issues/24722
